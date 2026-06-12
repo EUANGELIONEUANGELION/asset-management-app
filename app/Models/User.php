@@ -38,4 +38,8 @@ class User extends Authenticatable
             'password' => 'hashed', // Menjamin password otomatis di-bcrypt saat disimpan
         ];
     }
+    public function assignments()
+{
+    return $this->hasMany(Assignment::class, 'assigned_to');
+}
 }
